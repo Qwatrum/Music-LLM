@@ -13,6 +13,7 @@
 * Start the LLM and click 'Start'
 * Click any piano key or load an existing song
 * Green piano keys are recommend that means more data exist for them. Errors can still happen
+  
 ![menu](https://cloud-ov7h3b4ki-hack-club-bot.vercel.app/0musicllm__1_.png)
 	
 ## Creating a song:
@@ -20,19 +21,20 @@
 * See _How does it work_ to see the explanation behind it
 * After around 2 seconds the song will start
 * Each note will be played and visualised
+  
 ![piano](https://cloud-jd0dx9p2r-hack-club-bot.vercel.app/0musicllm__2_.png)
-
 * At the end you can either save it or create a new song
+  
 ![save](https://cloud-9qmo72otm-hack-club-bot.vercel.app/0musicllm__3_.png)
-
 * During playing you can pause and resume or restart
+  
 ![pause](https://cloud-1wl6db20o-hack-club-bot.vercel.app/0musicllm__5_.png)
-
 * If you want to quit you can always press the X (top right corner)
 	
 ## Loading a song:
 * If you saved a song you can simply load it
 * You can also delete a saved song by pressing the red X
+  
 ![load](https://cloud-57lfhzzt0-hack-club-bot.vercel.app/0musicllm__6_.png)
 	
 ## How does it work:
