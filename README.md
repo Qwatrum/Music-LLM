@@ -21,10 +21,13 @@
 * After around 2 seconds the song will start
 * Each note will be played and visualised
 ![piano](https://cloud-jd0dx9p2r-hack-club-bot.vercel.app/0musicllm__2_.png)
+
 * At the end you can either save it or create a new song
 ![save](https://cloud-9qmo72otm-hack-club-bot.vercel.app/0musicllm__3_.png)
+
 * During playing you can pause and resume or restart
 ![pause](https://cloud-1wl6db20o-hack-club-bot.vercel.app/0musicllm__5_.png)
+
 * If you want to quit you can always press the X (top right corner)
 	
 ## Loading a song:
@@ -57,7 +60,7 @@
 		2. The note duration in milli seconds. A quarter note is ~ 400ms (140 BPM)
 * The algorithm plays the note for x ms and after that the next note. So chords are not possible at the moment but are planned in the future.
 * After copy pasting, just press the `Done` button
-* You can also reset to standard or delte the whole data (this cannot be undone!).
+* You can also reset to standard or delte the whole data (this cannot be undone!) (Todo).
 
 ## Further plans:
 * Add more data
