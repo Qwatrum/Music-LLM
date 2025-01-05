@@ -1,0 +1,98 @@
+[gd_scene load_steps=9 format=3 uid="uid://x7km0u5h531e"]
+
+[ext_resource type="Script" path="res://scenes/clickable_song.gd" id="1_dyfpk"]
+[ext_resource type="FontFile" uid="uid://bsdutbrstdio7" path="res://fonts/Rubik/static/Rubik-Medium.ttf" id="2_qwonh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kv6e6"]
+bg_color = Color(0, 0, 0.290196, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.00784314, 0.67451, 0.635294, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jx0wb"]
+bg_color = Color(0, 0, 0.0784314, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0.639216, 0.443137, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u8wca"]
+bg_color = Color(0, 0, 0.0784314, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.00784314, 0.67451, 0.635294, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2dmya"]
+bg_color = Color(0, 0, 0.290196, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.00784314, 0.67451, 0.635294, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="Theme" id="Theme_mjpmq"]
+Button/colors/font_color = Color(0.858824, 0.858824, 0.858824, 1)
+Button/font_sizes/font_size = 38
+Button/fonts/font = ExtResource("2_qwonh")
+Button/styles/focus = SubResource("StyleBoxFlat_kv6e6")
+Button/styles/hover = SubResource("StyleBoxFlat_jx0wb")
+Button/styles/normal = SubResource("StyleBoxFlat_u8wca")
+Button/styles/pressed = SubResource("StyleBoxFlat_2dmya")
+
+[sub_resource type="Theme" id="Theme_g6s5s"]
+Button/colors/font_color = Color(0.537255, 0, 0.172549, 1)
+Button/font_sizes/font_size = 38
+Button/fonts/font = ExtResource("2_qwonh")
+Button/styles/focus = SubResource("StyleBoxFlat_kv6e6")
+Button/styles/hover = SubResource("StyleBoxFlat_jx0wb")
+Button/styles/normal = SubResource("StyleBoxFlat_u8wca")
+Button/styles/pressed = SubResource("StyleBoxFlat_2dmya")
+
+[node name="Clickable_song" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_dyfpk")
+
+[node name="Background" type="Button" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_right = 452.0
+offset_bottom = 46.0
+theme = SubResource("Theme_mjpmq")
+theme_override_font_sizes/font_size = 20
+text = "a"
+alignment = 0
+text_overrun_behavior = 1
+
+[node name="Delete" type="Button" parent="."]
+layout_mode = 0
+offset_left = 422.0
+offset_right = 459.0
+offset_bottom = 46.0
+theme = SubResource("Theme_g6s5s")
+theme_override_font_sizes/font_size = 32
+text = "X"
+
+[connection signal="pressed" from="Background" to="." method="_on_background_pressed"]
+[connection signal="pressed" from="Delete" to="." method="_on_delete_pressed"]

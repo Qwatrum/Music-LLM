@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccds00pqckmm3"]
+
+[ext_resource type="Script" path="res://scenes/note_player.gd" id="1_4gyyr"]
+[ext_resource type="AudioStream" uid="uid://ddt786o50hj2u" path="res://notes/C4.wav" id="2_r84w4"]
+
+[node name="NotePlayer" type="Node2D"]
+script = ExtResource("1_4gyyr")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_r84w4")
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

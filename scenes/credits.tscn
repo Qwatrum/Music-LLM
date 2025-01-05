@@ -1,0 +1,164 @@
+[gd_scene load_steps=12 format=3 uid="uid://ybketnc3ela2"]
+
+[ext_resource type="Script" path="res://scenes/credits.gd" id="1_tsbuu"]
+[ext_resource type="FontFile" uid="uid://d15asrafrelve" path="res://fonts/Rubik/static/Rubik-Bold.ttf" id="1_v43av"]
+[ext_resource type="FontFile" uid="uid://bsdutbrstdio7" path="res://fonts/Rubik/static/Rubik-Medium.ttf" id="2_b6gmu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bug07"]
+font = ExtResource("1_v43av")
+font_size = 64
+font_color = Color(0.00784314, 0.67451, 0.635294, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_er3ac"]
+font = ExtResource("2_b6gmu")
+font_size = 24
+font_color = Color(0.403922, 0.188235, 0.54902, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gyl2w"]
+font = ExtResource("2_b6gmu")
+font_size = 28
+font_color = Color(0.00784314, 0.67451, 0.635294, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bb3w8"]
+bg_color = Color(0, 0, 0.290196, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.00784314, 0.67451, 0.635294, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_crud7"]
+bg_color = Color(0, 0, 0.0784314, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0.639216, 0.443137, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ctjsv"]
+bg_color = Color(0, 0, 0.0784314, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.00784314, 0.67451, 0.635294, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jhrq0"]
+bg_color = Color(0, 0, 0.290196, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.00784314, 0.67451, 0.635294, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="Theme" id="Theme_u5vjg"]
+Button/colors/font_color = Color(0.858824, 0.858824, 0.858824, 0.992157)
+Button/font_sizes/font_size = 38
+Button/fonts/font = ExtResource("2_b6gmu")
+Button/styles/focus = SubResource("StyleBoxFlat_bb3w8")
+Button/styles/hover = SubResource("StyleBoxFlat_crud7")
+Button/styles/normal = SubResource("StyleBoxFlat_ctjsv")
+Button/styles/pressed = SubResource("StyleBoxFlat_jhrq0")
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tsbuu")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0.0784314, 1)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -164.0
+offset_top = 22.0
+offset_right = 164.0
+offset_bottom = 98.0
+grow_horizontal = 2
+text = "Music LLM"
+label_settings = SubResource("LabelSettings_bug07")
+
+[node name="Subtitle" type="Label" parent="Title"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -70.0
+offset_top = -11.0
+offset_right = 70.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "by Qwatrum"
+label_settings = SubResource("LabelSettings_er3ac")
+
+[node name="Text" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -388.0
+offset_top = -151.5
+offset_right = 388.0
+offset_bottom = 9.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Credits:
+
+Code: Qwatrum
+Design: Qwatrum
+Notes audio from github.com/plemaster01/PythonPiano
+Font: Rubik (Google Fonts)"
+label_settings = SubResource("LabelSettings_gyl2w")
+horizontal_alignment = 1
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.0
+offset_top = 133.0
+offset_right = 66.0
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_u5vjg")
+text = "Back"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3pxv0knu32iu"]
+
+[ext_resource type="Script" path="res://scenes/black_key.gd" id="1_l3o8d"]
+[ext_resource type="FontFile" uid="uid://deo3p5juw5eqo" path="res://fonts/Rubik/static/Rubik-Light.ttf" id="2_wr3ql"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xoy3l"]
+font = ExtResource("2_wr3ql")
+font_size = 13
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dbm2s"]
+size = Vector2(29, 189)
+
+[node name="BlackKey" type="Node2D"]
+z_index = 2
+script = ExtResource("1_l3o8d")
+
+[node name="Key" type="ColorRect" parent="."]
+offset_left = 20.0
+offset_top = 392.0
+offset_right = 49.0
+offset_bottom = 581.0
+mouse_filter = 1
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 20.0
+offset_top = 564.0
+offset_right = 49.0
+offset_bottom = 581.0
+text = "B#9"
+label_settings = SubResource("LabelSettings_xoy3l")
+horizontal_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="."]
+priority = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(34.5, 486.5)
+shape = SubResource("RectangleShape2D_dbm2s")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

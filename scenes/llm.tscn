@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dw0u313esv6yh"]
+
+[ext_resource type="Script" path="res://scenes/llm.gd" id="1_ked8i"]
+
+[node name="LLM" type="Node2D"]
+script = ExtResource("1_ked8i")

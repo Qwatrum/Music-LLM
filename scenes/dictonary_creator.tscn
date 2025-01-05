@@ -1,0 +1,68 @@
+[gd_scene load_steps=3 format=3 uid="uid://q212uk67ckot"]
+
+[ext_resource type="Script" path="res://scenes/dictonary_creator.gd" id="1_ebixm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_m7muv"]
+
+[node name="DictonaryCreator" type="Node2D"]
+script = ExtResource("1_ebixm")
+
+[node name="LineEdit" type="LineEdit" parent="."]
+offset_left = 44.0
+offset_top = 158.0
+offset_right = 1782.0
+offset_bottom = 193.0
+placeholder_text = "New Input"
+
+[node name="Done" type="Button" parent="."]
+offset_left = 846.0
+offset_top = 328.0
+offset_right = 947.0
+offset_bottom = 365.0
+text = "Done"
+
+[node name="Back" type="Button" parent="."]
+offset_left = 856.0
+offset_top = 413.0
+offset_right = 946.0
+offset_bottom = 457.0
+text = "Back"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 23.0
+offset_top = 13.0
+offset_right = 658.0
+offset_bottom = 140.0
+text = "You can train the LLM here. Simply copy paste your song notes in square brackets:
+Example: [ [\"C4\", 200], [\"E4\", 200], [\"C4\", 200], [\"B4\", 200] ]
+
+C4 is the note name
+and the number the duration in ms"
+
+[node name="Delete" type="Button" parent="."]
+offset_left = 11.0
+offset_top = 521.0
+offset_right = 353.0
+offset_bottom = 552.0
+disabled = true
+text = "Delete training data (Todo)"
+
+[node name="Reset" type="Button" parent="."]
+offset_left = 12.0
+offset_top = 578.0
+offset_right = 347.0
+offset_bottom = 609.0
+text = "Reset training data to standard (CANNOT BE UNDONE)"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 827.0
+offset_top = 577.0
+offset_right = 980.0
+offset_bottom = 648.0
+label_settings = SubResource("LabelSettings_m7muv")
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Done" to="." method="_on_done_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Delete" to="." method="_on_delete_pressed"]
+[connection signal="pressed" from="Reset" to="." method="_on_reset_pressed"]

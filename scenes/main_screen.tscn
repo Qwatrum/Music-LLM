@@ -1,0 +1,269 @@
+[gd_scene load_steps=14 format=3 uid="uid://c37dnwg3qm7c0"]
+
+[ext_resource type="Script" path="res://scenes/main_screen.gd" id="1_slkjw"]
+[ext_resource type="FontFile" uid="uid://d15asrafrelve" path="res://fonts/Rubik/static/Rubik-Bold.ttf" id="1_t4ggk"]
+[ext_resource type="FontFile" uid="uid://bsdutbrstdio7" path="res://fonts/Rubik/static/Rubik-Medium.ttf" id="2_rmetc"]
+[ext_resource type="PackedScene" uid="uid://0dfp6ygbrhih" path="res://scenes/piano.tscn" id="4_tgk5u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k42oo"]
+bg_color = Color(0, 0, 0.290196, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.00784314, 0.67451, 0.635294, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f8kto"]
+bg_color = Color(0, 0, 0.0784314, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0.639216, 0.443137, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iwrfs"]
+bg_color = Color(0, 0, 0.0784314, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.00784314, 0.67451, 0.635294, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v3b3q"]
+bg_color = Color(0, 0, 0.290196, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.00784314, 0.67451, 0.635294, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="Theme" id="Theme_tfhux"]
+Button/colors/font_color = Color(0.858824, 0.858824, 0.858824, 0.992157)
+Button/font_sizes/font_size = 38
+Button/fonts/font = ExtResource("2_rmetc")
+Button/styles/focus = SubResource("StyleBoxFlat_k42oo")
+Button/styles/hover = SubResource("StyleBoxFlat_f8kto")
+Button/styles/normal = SubResource("StyleBoxFlat_iwrfs")
+Button/styles/pressed = SubResource("StyleBoxFlat_v3b3q")
+
+[sub_resource type="LabelSettings" id="LabelSettings_brk7y"]
+font = ExtResource("1_t4ggk")
+font_size = 64
+font_color = Color(0.00784314, 0.67451, 0.635294, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ykaoi"]
+font = ExtResource("2_rmetc")
+font_size = 24
+font_color = Color(0.403922, 0.188235, 0.54902, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_m7ats"]
+font = ExtResource("1_t4ggk")
+font_size = 32
+font_color = Color(0.00784314, 0.67451, 0.635294, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vsn2a"]
+font = ExtResource("2_rmetc")
+font_size = 20
+
+[node name="MainScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = SubResource("Theme_tfhux")
+script = ExtResource("1_slkjw")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0.0784314, 1)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 330.0
+offset_bottom = 78.0
+scale = Vector2(0.7, 0.7)
+text = "Music LLM"
+label_settings = SubResource("LabelSettings_brk7y")
+
+[node name="Subtitle" type="Label" parent="Title"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -70.0
+offset_top = -11.0
+offset_right = 70.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "by Qwatrum"
+label_settings = SubResource("LabelSettings_ykaoi")
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -63.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = 54.0
+grow_horizontal = 0
+theme = SubResource("Theme_tfhux")
+text = "X"
+
+[node name="Piano" parent="." instance=ExtResource("4_tgk5u")]
+
+[node name="StatusText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -318.0
+offset_top = 120.0
+offset_right = 318.0
+offset_bottom = 158.0
+grow_horizontal = 2
+text = "Click a piano key to start.
+Or"
+label_settings = SubResource("LabelSettings_m7ats")
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Blocker" type="ColorRect" parent="."]
+z_index = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 373.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0.0784314, 0.635294)
+
+[node name="Options" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = -110.5
+offset_right = 137.0
+offset_bottom = 14.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 21
+
+[node name="Save" type="Button" parent="Options"]
+layout_mode = 2
+text = "Save music"
+
+[node name="New" type="Button" parent="Options"]
+layout_mode = 2
+text = "Create new"
+
+[node name="Pause" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 6.0
+offset_top = 98.0
+offset_right = 134.0
+offset_bottom = 150.0
+theme_override_font_sizes/font_size = 32
+text = "Pause"
+
+[node name="Restart" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 6.0
+offset_top = 158.0
+offset_right = 134.0
+offset_bottom = 210.0
+theme_override_font_sizes/font_size = 32
+text = "Restart"
+
+[node name="Stop" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 6.0
+offset_top = 218.0
+offset_right = 134.0
+offset_bottom = 270.0
+theme_override_font_sizes/font_size = 32
+text = "Stop"
+
+[node name="Load" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -116.0
+offset_top = -116.0
+offset_right = 115.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Load music"
+
+[node name="Disclaimer" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -372.5
+offset_top = -25.5
+offset_right = 372.5
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "(Green notes means recommended [more data for them]. 
+Others are unrecommended due to not enough training data)"
+label_settings = SubResource("LabelSettings_vsn2a")
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Options/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="Options/New" to="." method="_on_new_pressed"]
+[connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Stop" to="." method="_on_stop_pressed"]
+[connection signal="pressed" from="Load" to="." method="_on_load_pressed"]

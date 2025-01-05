@@ -1,0 +1,191 @@
+[gd_scene load_steps=12 format=3 uid="uid://cg51rvwi3me8l"]
+
+[ext_resource type="Script" path="res://scenes/instructions.gd" id="1_tlox7"]
+[ext_resource type="FontFile" uid="uid://d15asrafrelve" path="res://fonts/Rubik/static/Rubik-Bold.ttf" id="1_v43av"]
+[ext_resource type="FontFile" uid="uid://bsdutbrstdio7" path="res://fonts/Rubik/static/Rubik-Medium.ttf" id="2_b6gmu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bug07"]
+font = ExtResource("1_v43av")
+font_size = 64
+font_color = Color(0.00784314, 0.67451, 0.635294, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_er3ac"]
+font = ExtResource("2_b6gmu")
+font_size = 24
+font_color = Color(0.403922, 0.188235, 0.54902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kv6e6"]
+bg_color = Color(0, 0, 0.290196, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.00784314, 0.67451, 0.635294, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jx0wb"]
+bg_color = Color(0, 0, 0.0784314, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0.639216, 0.443137, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u8wca"]
+bg_color = Color(0, 0, 0.0784314, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.00784314, 0.67451, 0.635294, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2dmya"]
+bg_color = Color(0, 0, 0.290196, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.00784314, 0.67451, 0.635294, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="Theme" id="Theme_u5vjg"]
+Button/colors/font_color = Color(0.858824, 0.858824, 0.858824, 0.992157)
+Button/font_sizes/font_size = 38
+Button/fonts/font = ExtResource("2_b6gmu")
+Button/styles/focus = SubResource("StyleBoxFlat_kv6e6")
+Button/styles/hover = SubResource("StyleBoxFlat_jx0wb")
+Button/styles/normal = SubResource("StyleBoxFlat_u8wca")
+Button/styles/pressed = SubResource("StyleBoxFlat_2dmya")
+
+[sub_resource type="LabelSettings" id="LabelSettings_q8pth"]
+line_spacing = -6.0
+font_size = 24
+font_color = Color(0.00784314, 0.67451, 0.635294, 1)
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tlox7")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0.0784314, 1)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -164.0
+offset_top = 22.0
+offset_right = 164.0
+offset_bottom = 98.0
+grow_horizontal = 2
+text = "Music LLM"
+label_settings = SubResource("LabelSettings_bug07")
+
+[node name="Subtitle" type="Label" parent="Title"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -70.0
+offset_top = -11.0
+offset_right = 70.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "by Qwatrum"
+label_settings = SubResource("LabelSettings_er3ac")
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.0
+offset_top = 262.0
+offset_right = 66.0
+offset_bottom = 314.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_u5vjg")
+text = "Back"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -567.5
+offset_top = -183.0
+offset_right = 568.5
+offset_bottom = 252.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="Text" type="Label" parent="ScrollContainer"]
+layout_mode = 2
+text = "---------------------------------------------------------------------------------------------------------------------------------------------
+How does it work?
+
+Content:
+1. How to use
+2. The logic behind this
+
+1) How to use:
+- In the main menu, click 'Start'.
+- You can either load a song or generate a new one:
+- Click a piano key with the note you want the music to start with.
+- Wait a bit.
+- Listen to the music. You can pause, resume, restart or stop.
+- If you want you can save it.
+
+2) The logic behind this:
+- It is similliar how LLMs work
+- Using given data a dictionary is created where the keys are music tones
+ and the values which tones are most likely to follow
+- When you choose a tone, the LLM looks which tone is most likely to follow
+- Then for these two a new tone that is most likely to follow
+- Then for the one old and the new added tone which is the most likely... and so on
+- At the end you have a completly new generated song
+- It is possible that there are two notes which are not in the dictionary,
+if so it is called that the input is \"not found in the corpus\"
+- That means it is possible that the song finishs suddenly
+- It is fixable: Just add more data (press alt in main menu)
+- For the green labeled notes exist more data. But errors can also happen
+---------------------------------------------------------------------------------------------------------------------------------------------"
+label_settings = SubResource("LabelSettings_q8pth")
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

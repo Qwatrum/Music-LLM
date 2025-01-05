@@ -1,0 +1,152 @@
+[gd_scene load_steps=11 format=3 uid="uid://hil0p5o2dlyb"]
+
+[ext_resource type="FontFile" uid="uid://d15asrafrelve" path="res://fonts/Rubik/static/Rubik-Bold.ttf" id="1_2vw4u"]
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_8wj2e"]
+[ext_resource type="FontFile" uid="uid://bsdutbrstdio7" path="res://fonts/Rubik/static/Rubik-Medium.ttf" id="2_2novy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hjmpj"]
+font = ExtResource("1_2vw4u")
+font_size = 64
+font_color = Color(0.00784314, 0.67451, 0.635294, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5ygdj"]
+font = ExtResource("2_2novy")
+font_size = 24
+font_color = Color(0.403922, 0.188235, 0.54902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kv6e6"]
+bg_color = Color(0, 0, 0.290196, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.00784314, 0.67451, 0.635294, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jx0wb"]
+bg_color = Color(0, 0, 0.0784314, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0.639216, 0.443137, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u8wca"]
+bg_color = Color(0, 0, 0.0784314, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.00784314, 0.67451, 0.635294, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2dmya"]
+bg_color = Color(0, 0, 0.290196, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.00784314, 0.67451, 0.635294, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="Theme" id="Theme_c0yy1"]
+Button/colors/font_color = Color(0.858824, 0.858824, 0.858824, 0.992157)
+Button/font_sizes/font_size = 38
+Button/fonts/font = ExtResource("2_2novy")
+Button/styles/focus = SubResource("StyleBoxFlat_kv6e6")
+Button/styles/hover = SubResource("StyleBoxFlat_jx0wb")
+Button/styles/normal = SubResource("StyleBoxFlat_u8wca")
+Button/styles/pressed = SubResource("StyleBoxFlat_2dmya")
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8wj2e")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0.0784314, 1)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -164.0
+offset_top = 22.0
+offset_right = 164.0
+offset_bottom = 98.0
+grow_horizontal = 2
+text = "Music LLM"
+label_settings = SubResource("LabelSettings_hjmpj")
+
+[node name="Subtitle" type="Label" parent="Title"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -70.0
+offset_top = -11.0
+offset_right = 70.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "by Qwatrum"
+label_settings = SubResource("LabelSettings_5ygdj")
+
+[node name="Elements" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -179.0
+offset_top = -80.0
+offset_right = 183.0
+offset_bottom = 81.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_c0yy1")
+theme_override_constants/separation = 20
+
+[node name="Start" type="Button" parent="Elements"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Start"
+
+[node name="Instructions" type="Button" parent="Elements"]
+layout_mode = 2
+text = "How does it work?"
+
+[node name="Credits" type="Button" parent="Elements"]
+layout_mode = 2
+text = "Credits"
+
+[connection signal="pressed" from="Elements/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Elements/Instructions" to="." method="_on_instructions_pressed"]
+[connection signal="pressed" from="Elements/Credits" to="." method="_on_credits_pressed"]
