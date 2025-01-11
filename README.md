@@ -62,7 +62,8 @@
 		2. The note duration in milli seconds. A quarter note is ~ 400ms (140 BPM)
 * The algorithm plays the note for x ms and after that the next note. So chords are not possible at the moment but are planned in the future.
 * After copy pasting, just press the `Done` button
-* You can also reset to standard or delte the whole data (this cannot be undone!) (Todo).
+* You can also reset to standard or delte the whole data (this cannot be undone!) (Todo)
+* You can also change the length. Open `llm.gd` in `scenes` and change the length in line 45
 
 ## Further plans:
 * Add more data
