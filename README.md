@@ -68,6 +68,9 @@
 ## Further plans:
 * Add more data
 * Chords
+
+## Contributing:
+Feel free to contribute. More data, new features are warmly welcomed.
 	
 ## Credits:
 * Code: Qwatrum
